@@ -36,7 +36,7 @@ public class VendorTests : IDisposable
     //arrange
     string name1 = "I Buy Pastries";
     string name2 = "I Buy Bread";
-    string name3 = "I buy Both";
+    string name3 = "I Buy Both";
     Vendor newVendor1 = new Vendor(name1);
     Vendor newVendor2 = new Vendor(name2);
     Vendor newVendor3 = new Vendor(name3);
