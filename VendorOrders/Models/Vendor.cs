@@ -1,4 +1,5 @@
 using System.Collections.Generic;
+using System;
 
 namespace VendorOrders.Models
 {
@@ -13,6 +14,11 @@ namespace VendorOrders.Models
       _instances.Add(this);
     }
 
+    public static void ClearAll()
+    {
+      _instances.Clear();
+    }
+
     public static List<Vendor> GetAll()
     {
       return _instances;
@@ -20,3 +26,4 @@ namespace VendorOrders.Models
 
   }
 }
+
