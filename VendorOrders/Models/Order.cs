@@ -8,11 +8,11 @@ namespace VendorOrders.Models
     public string Title { get; set; }
     private static List<Order> _instances = new List<Order> { };
 
-    public string Description( get; set; )
+    public string Description { get; set; }
     
-    public decimal Price( get; set; )
+    public decimal Price { get; set; }
 
-    public DateTime Date( get; set; ) 
+    public DateTime Date { get; set; }
 
     public Order( string title, string description, decimal price )
     {
@@ -22,7 +22,6 @@ namespace VendorOrders.Models
       Price = price;
       Date = DateTime.Today;
     } 
-
 
   }
 }
