@@ -10,8 +10,8 @@
 * dotnet 6
 
 ## Description
+This utility allows for order creation and tracking for sales to customers.  Many of these customers are businesses who go on to sell the products to their own customers, so we refer to them as Vendors.
 
-.
 
 ## Setup Requirements
 
