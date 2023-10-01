@@ -19,6 +19,7 @@
 * open a shell and navigate to this project's directory "VendorOrders"
 * run **dotnet run** in the command line to start the app
 * run **dotnet watch run** in the command line to load in development mode with a watcher
+* navigate to the test directory VendorOrders.Tests
 * run **dotnet test** in the command line to test it
 * Open the browser to **https://Localhost:5001**
 
