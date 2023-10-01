@@ -14,39 +14,44 @@ public class OrderTests : IDisposable
   }
   
   [TestMethod]
-  public void VendorConstructor_CreatesInstanceOfOrder_Order()
+  public void OrderConstructor_CreatesInstanceOfOrder_Order()
   {
-    Vendor newVendor = new Vendor("I Buy Pastries");
-    Assert.AreEqual(typeof(Vendor), newVendor.GetType());
-  }
-
-  [TestMethod]
-  public void GetName_ReturnsName_Name()
-  {
-    string newName = "I Buy Pastries";
-    string badName = "I Don't Buy Pastries";
-    Vendor newVendor = new Vendor(newName);
-    Assert.AreNotEqual(newVendor.Name, badName);
-    Assert.AreEqual(newVendor.Name, newName);
-  }
-
-  [TestMethod]
-  public void GetAll_ReturnsVendorList_List()
-  {
-    //arrange
-    string name1 = "I Buy Pastries";
-    string name2 = "I Buy Bread";
-    string name3 = "I Buy Both";
-    Vendor newVendor1 = new Vendor(name1);
-    Vendor newVendor2 = new Vendor(name2);
-    Vendor newVendor3 = new Vendor(name3);
-    List<Vendor> expectedList = new List<Vendor> { newVendor1, newVendor2, newVendor3 };
-
-    //Act
-    List<Vendor> result = Vendor.GetAll();
+    string title1 = "1";
+    string desc1 = "The first order";
+    decimal price1 = 4.25m;
     
-    //Assert
-    Assert.AreEqual(expectedList.Count, result.Count);
-
+    Order newOrder = new Order(title1, desc1, price1);
+    Assert.AreEqual(typeof(Order), newOrder.GetType());
   }
+
+  [TestMethod]
+  public void GetTitle_ReturnsTitle_Title()
+  {
+    string title1 = "1";
+    string desc1 = "The first order";
+    decimal price1 = 4.25m;
+    Order newOrder = new Order(title1, desc1, price1);
+    Assert.AreEqual(newOrder.Title, title1);
+  }
+
+  // [TestMethod]
+  // public void GetAll_ReturnsOrderList_List()
+  // {
+  //   //arrange
+  //   string name1 = "1";
+  //   string desc1 = "The first order"
+  //   decimal price1 = 4.25m;
+  //   string name3 = "I Buy Both";
+  //   Order newOrder1 = new Order(name1);
+  //   Order newOrder2 = new Order(name2);
+  //   Order newOrder3 = new Order(name3);
+  //   List<Order> expectedList = new List<Order> { newOrder1, newOrder2, newOrder3 };
+
+  //   //Act
+  //   List<Order> result = Order.GetAll();
+    
+  //   //Assert
+  //   Assert.AreEqual(expectedList.Count, result.Count);
+
+  // }
 }
