@@ -25,7 +25,7 @@ public class OrderTests : IDisposable
   }
 
   [TestMethod]
-  public void GetTitle_ReturnsTitle_Title()
+  public void GetOrderTitle_ReturnsOrder_Order()
   {
     string title1 = "1";
     string desc1 = "The first order";

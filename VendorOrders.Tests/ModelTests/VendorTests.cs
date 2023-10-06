@@ -21,7 +21,7 @@ public class VendorTests : IDisposable
   }
 
   [TestMethod]
-  public void GetName_ReturnsName_Name()
+  public void GetVendorName_ReturnsName_Name()
   {
     string newName = "I Buy Pastries";
     string badName = "I Don't Buy Pastries";
@@ -31,7 +31,7 @@ public class VendorTests : IDisposable
   }
 
   [TestMethod]
-  public void GetAll_ReturnsVendorList_List()
+  public void GetAllVendors_ReturnsVendorList_List()
   {
     //arrange
     string name1 = "I Buy Pastries";
