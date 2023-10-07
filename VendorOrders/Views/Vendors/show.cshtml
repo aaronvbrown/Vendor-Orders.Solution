@@ -1,0 +1,26 @@
+@{
+  Layout = "_Layout";
+}
+
+@using VendorOrders.Models;
+@* @model VendorOrders.Models.Vendor; *@
+
+<h2>Customer Details</h2>
+<hr />
+<p>@Model["vendor"].Name</p>
+<p>@Model["vendor"].Description</p>
+
+
+
+
+
+<h3>Here are the orders for this customer:</h3>
+
+<ol>
+@foreach (Order order in @Model["orders"])
+{
+  <li><a href='/vendors/@Model["vendor"].Id/orders/@order.Title'>@order.Description</a></li>
+}
+</ol>
+
+

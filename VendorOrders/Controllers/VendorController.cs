@@ -22,25 +22,37 @@ namespace VendorOrders.Controllers
     }
 
     [HttpPost("/vendors")]
-    public ActionResult Create(string vendorName)
+    public ActionResult Create(string vendorName, string vendorDescription)
     {
-      Vendor newVendor = new Vendor(vendorName);
+      Vendor newVendor = new Vendor(vendorName, vendorDescription);
       return RedirectToAction("Index");
     }
 
+     
     [HttpGet("/vendors/{id}")]
     public ActionResult Show(int id)
     {
       Dictionary<string, object> model = new Dictionary<string, object>();
       Vendor selectedVendor = Vendor.Find(id);
-      // List<Orders> vendorOrders = selectedVendor.Orders;
+      List<Order> vendorOrders = selectedVendor.Orders;
       model.Add("vendor", selectedVendor);
-      // model.Add("items", vendorOrders);
+      model.Add("orders", vendorOrders);
       return View(model);
-    }
+    }    
+    
+    
+    // [HttpGet("/vendors/{id}")]
+    // public ActionResult Show(int id)
+    // {
+    //   Dictionary<string, object> model = new Dictionary<string, object>();
+    //   Vendor selectedVendor = Vendor.Find(id);
+    //   List<Orders> vendorOrders = selectedVendor.Orders;
+    //   model.Add("vendor", selectedVendor);
+    //   model.Add("items", vendorOrders);
+    //   return View(model);
+    // }
 
 
-    // This one creates new Items within a given Category, not new Categories:
 
     [HttpPost("/orders/{vendorId}/orders")]
     public ActionResult Create(int vendorId, string orderDescription)
