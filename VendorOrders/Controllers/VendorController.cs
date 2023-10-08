@@ -40,21 +40,8 @@ namespace VendorOrders.Controllers
       return View(model);
     }    
     
-    
-    // [HttpGet("/vendors/{id}")]
-    // public ActionResult Show(int id)
-    // {
-    //   Dictionary<string, object> model = new Dictionary<string, object>();
-    //   Vendor selectedVendor = Vendor.Find(id);
-    //   List<Orders> vendorOrders = selectedVendor.Orders;
-    //   model.Add("vendor", selectedVendor);
-    //   model.Add("items", vendorOrders);
-    //   return View(model);
-    // }
 
-
-
-    [HttpPost("/orders/{vendorId}/orders")]
+    [HttpPost("/orders/{id}/orders")]
     public ActionResult Create(int vendorId, string orderTitle, string orderDescription, decimal orderPrice)
     {
       Dictionary<string, object> model = new Dictionary<string, object>();
