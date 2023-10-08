@@ -13,14 +13,16 @@
 
 
 
-
 <h3>Here are the orders for this customer:</h3>
 
 <ol>
 @foreach (Order order in @Model["orders"])
 {
-  <li><a href='/vendors/@Model["vendor"].Id/orders/@order.Title'>@order.Description</a></li>
+  <li><a href='/vendors/@Model["vendor"].VendorId/orders/@order.Title'>@order.Description</a></li>
 }
 </ol>
 
 
+<p><a href='/vendors/@Model["vendor"].VendorId/orders/new'>Add a new order</a></p>
+<p><a href='/vendors'>Return to customer list</a></p>
+<p><a href='/'>Return to Main Page</a></p>

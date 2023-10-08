@@ -6,6 +6,7 @@ namespace VendorOrders.Models
   public class Order
   {
     public string Title { get; set; }
+    public int OrderId { get; }
     private static List<Order> _instances = new List<Order> { };
 
     public string Description { get; set; }
@@ -18,6 +19,7 @@ namespace VendorOrders.Models
     {
       Title = title;
       _instances.Add(this);
+      OrderId = _instances.Count;
       Description = description;
       Price = price;
       Date = DateTime.Today;
