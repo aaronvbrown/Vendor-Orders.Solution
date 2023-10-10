@@ -14,7 +14,6 @@
 <ul>
   @foreach (Vendor vendor in Model)
   {
-    @* <li>@Html.ActionLink($"{vendor.Name}", "Details", new {id = vendor.VendorId })</li> *@
     <li><a href='/vendors/@vendor.VendorId'>@vendor.Name</a></li> 
   }
 </ul>

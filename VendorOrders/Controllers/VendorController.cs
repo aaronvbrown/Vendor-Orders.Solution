@@ -41,7 +41,7 @@ namespace VendorOrders.Controllers
     }    
     
 
-    [HttpPost("/orders/{id}/orders")]
+    [HttpPost("/vendors/{id}/orders")]
     public ActionResult Create(int vendorId, string orderTitle, string orderDescription, decimal orderPrice)
     {
       Dictionary<string, object> model = new Dictionary<string, object>();

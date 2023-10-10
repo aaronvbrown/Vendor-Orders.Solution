@@ -12,7 +12,7 @@ namespace VendorOrders.Models
     public decimal Price { get; set; }
     public DateTime Date { get; set; }
 
-    public Order( string title, string description, decimal price )
+    public Order(string title, string description, decimal price )
     {
       Title = title;
       _instances.Add(this);

@@ -11,12 +11,11 @@ namespace VendorOrders.Controllers
     [HttpGet("/vendors/{vendorId}/orders/new")]
     public ActionResult New(int vendorId)
     {
-      // Order order = Order.Find(vendorId); // Should refer to Category?
-      Vendor vendor = Vendor.Find(vendorId); // Should refer to Category?
+      Vendor vendor = Vendor.Find(vendorId);
       return View(vendor);
     }
 
-    [HttpGet("vendors/{vendorId}/orders/{orderId}/")]
+    [HttpGet("vendors/{VendorId}/orders/{orderId}/")]
     public ActionResult Show(int vendorId, int orderId)
     {
       Order order = Order.Find(orderId);
