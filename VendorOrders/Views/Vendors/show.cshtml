@@ -3,7 +3,6 @@
 }
 
 @using VendorOrders.Models;
-@* @model VendorOrders.Models.Vendor; *@
 
 <h2>Customer Details</h2>
 <hr />
@@ -18,7 +17,7 @@
 <ol>
 @foreach (Order order in @Model["orders"])
 {
-  <li><a href='/vendors/@Model["vendor"].VendorId/orders/@order.OrderId'>Date: @order.Date, @order.Description, Price:  @order.Price</a></li>
+  <li><a href='/vendors/@Model["vendor"].VendorId/orders/@order.OrderId'>Date: @order.Date, Desc: @order.Description, Price: @order.Price</a></li>
 }
 </ol>
 
