@@ -53,6 +53,25 @@ public class OrderTests : IDisposable
     
     //Assert
     Assert.AreEqual(typeof(List<Order>), result.GetType());
+  }
 
+  [TestMethod]
+  public void FindOrder_ReturnsOrder_Order()
+  {
+    //arrange
+    string title1 = "Order the 1st";
+    string desc1 = "The first order";
+    decimal price1 = 4.25m;
+    string title2 = "Order the 2nd";
+    string desc2 = "The second order";
+    decimal price2 = 13.11m;
+    Order newOrder1 = new Order(title1, desc1, price1);
+    Order newOrder2 = new Order(title2, desc2, price2);
+
+    //Act
+    Order result = Order.Find(2);
+    
+    //Assert
+    Assert.AreEqual(result, newOrder2);
   }
 }
