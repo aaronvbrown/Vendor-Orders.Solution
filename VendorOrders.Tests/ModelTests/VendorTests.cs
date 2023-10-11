@@ -52,6 +52,28 @@ public class VendorTests : IDisposable
     
     //Assert
     Assert.AreEqual(expectedList.Count, result.Count);
+  }
+
+  [TestMethod]
+  public void FindVendor_ReturnsCorrectVendor_Vendor()
+  {
+    //arrange
+    string name1 = "Pastry Buyer";
+    string name2 = "Bread Buyer";
+    string name3 = "Both Buyer";
+    string desc1 = "I Buy Pastries";
+    string desc2 = "I Buy Bread";
+    string desc3 = "I Buy Both";
+    Vendor newVendor1 = new Vendor(name1, desc1);
+    Vendor newVendor2 = new Vendor(name2, desc2);
+    Vendor newVendor3 = new Vendor(name3, desc3);
+    List<Vendor> expectedList = new List<Vendor> { newVendor1, newVendor2, newVendor3 };
+
+    //Act
+    Vendor result = Vendor.Find(1);
+    
+    //Assert
+    Assert.AreEqual(result, newVendor1);
 
   }
 }
