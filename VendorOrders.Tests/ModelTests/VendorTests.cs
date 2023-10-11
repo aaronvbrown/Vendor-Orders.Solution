@@ -55,7 +55,7 @@ public class VendorTests : IDisposable
   }
 
   [TestMethod]
-  public void FindVendor_ReturnsCorrectVendor_Vendor()
+  public void AddOrder_ReturnsOrder_Order()
   {
     //arrange
     string name1 = "Pastry Buyer";
@@ -70,10 +70,10 @@ public class VendorTests : IDisposable
     List<Vendor> expectedList = new List<Vendor> { newVendor1, newVendor2, newVendor3 };
 
     //Act
-    Vendor result = Vendor.Find(1);
+    Vendor result = Vendor.Find(2);
     
     //Assert
-    Assert.AreEqual(result, newVendor1);
+    Assert.AreEqual(result, newVendor2);
 
   }
 }
